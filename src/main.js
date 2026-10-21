@@ -8,7 +8,7 @@ import { LoggingTodoServiceDecorator } from './LoggingTodoServiceDecorator.js';
 
 
 const factory    = new LocalStorageFactory();
-const service    = factory.createService();
+const service = new LoggingTodoServiceDecorator(factory.createService());
 const renderer   = new TodoRenderer('task-container');
 const controller = new TodoController(service, renderer);
 controller.start();
