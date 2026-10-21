@@ -1,6 +1,10 @@
 // LocalStorageHandler is the only code that knows tasks live in localStorage.
-export class LocalStorageHandler {
+// ConcreteProduct in the Factory Method pattern.
+import { StorageHandler } from './StorageHandler.js';
+
+export class LocalStorageHandler extends StorageHandler {
     constructor(key = 'todo-tasks') {
+        super();
         this.key = key;
     }
 
